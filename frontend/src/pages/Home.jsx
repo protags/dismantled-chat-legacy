@@ -51,7 +51,7 @@ const Home = () => {
     };
 
     return (
-        <div className='flex justify-center items-center h-screen bg-[#1e1f22]'>
+        <div className='flex justify-center items-center h-dvh bg-[#1e1f22]'>
             <LoginCard
                 username={username}
                 setUsername={setUsername}

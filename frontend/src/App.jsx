@@ -21,7 +21,7 @@ const App = () => {
   }, [connect, disconnect]);
 
   return (
-    <div className={`min-h-screen ${themes[currentTheme].prefix} overflow-hidden`}>
+    <div className={`min-h-dvh ${themes[currentTheme].prefix} overflow-hidden`}>
       <AnimatePresence mode="wait">
         {showSplash ? (
           <SplashScreen key="splash" onComplete={() => setShowSplash(false)} />

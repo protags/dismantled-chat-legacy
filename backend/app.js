@@ -34,25 +34,25 @@ if (process.env.NODE_ENV === "production") {
 
 io.on("connection", (socket) => {
 
-    socket.on("create-user", (displayName, email, pfp) => {
-        const username = displayName;
+    socket.on("create-user", (username, email = "", pfp = "") => {
         if (!username?.trim()) return;
+
         const existingUser = users.find((u) => u.id === socket.id);
+
         const user = {
             id: socket.id,
             username,
-            displayName,
+            displayName: username,
             email,
             pfp
         };
+
         if (existingUser) {
-            existingUser.username = username;
-            existingUser.displayName = displayName;
-            existingUser.email = email;
-            existingUser.pfp = pfp;
+            Object.assign(existingUser, user);
         } else {
             users.push(user);
         }
+
         socket.emit("chat-history", messages);
         socket.emit("user-created", user);
         io.emit("get-users", users);

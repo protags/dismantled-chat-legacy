@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@layer utilities {
+    .h-dvh {
+        height: 100svh;
+    }
+    .min-h-dvh {
+        min-height: 100svh;
+    }
+}

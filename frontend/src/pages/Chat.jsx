@@ -37,7 +37,7 @@ const Chat = () => {
     }, [messages])
 
     return (
-        <div className='flex flex-col h-screen relative bg-[#313338] text-[#dbdee1]'>
+        <div className='flex flex-col h-dvh relative bg-[#313338] text-[#dbdee1]'>
             {/* Responsive Header */}
             <div className='h-12 bg-[#1e1f22] px-4 flex items-center justify-between border-b border-black/20 select-none shrink-0'>
                 <div className='flex items-center gap-2'>
