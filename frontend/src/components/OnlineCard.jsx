@@ -27,13 +27,15 @@ const OnlineCard = ({ user, onClose }) => {
                         key={u.id}
                         className='flex items-center gap-3 px-2 py-1.5 rounded hover:bg-white/4 active:bg-white/6 transition-colors duration-150 cursor-pointer group'
                     >
-                        <div className='relative w-8 h-8 rounded-full bg-[#5865f2] flex items-center justify-center text-white shrink-0 shadow-sm select-none overflow-hidden'>
-                            {u.pfp ? (
-                                <img src={u.pfp} alt={u.username} className="w-full h-full object-cover" />
-                            ) : (
-                                <IoPersonSharp className='text-base' />
-                            )}
-                            <div className='absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#23a55a] border-2 border-[#2b2d31] rounded-full' />
+                        <div className='relative w-8 h-8 shrink-0 select-none'>
+                            <div className='w-full h-full rounded-full bg-[#5865f2] flex items-center justify-center text-white shadow-sm overflow-hidden'>
+                                {u.pfp ? (
+                                    <img src={u.pfp} alt={u.username} className="w-full h-full object-cover" />
+                                ) : (
+                                    <IoPersonSharp className='text-base' />
+                                )}
+                            </div>
+                            <div className='absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#23a55a] border-2 border-[#2b2d31] rounded-full' />
                         </div>
                         <span className='text-[14px] font-medium text-[#b5bac1] group-hover:text-[#dbdee1] truncate'>
                             {u.username}

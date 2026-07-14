@@ -8,13 +8,15 @@ const ProfileCard = ({ user }) => {
     return (
         <div className='p-2 bg-[#232428] flex items-center justify-between gap-2 border-t border-white/5'>
             <div className='flex items-center gap-2 min-w-0'>
-                <div className='relative shrink-0 w-8 h-8 rounded-full bg-[#5865f2] flex items-center justify-center text-white shadow-sm select-none overflow-hidden'>
-                    {user.pfp ? (
-                        <img src={user.pfp} alt={user.username} className="w-full h-full object-cover" />
-                    ) : (
-                        <IoPersonSharp className='text-base' />
-                    )}
-                    <div className='absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#23a55a] border-2 border-[#232428] rounded-full' />
+                <div className='relative shrink-0 w-8 h-8 select-none'>
+                    <div className='w-full h-full rounded-full bg-[#5865f2] flex items-center justify-center text-white shadow-sm overflow-hidden'>
+                        {user.pfp ? (
+                            <img src={user.pfp} alt={user.username} className="w-full h-full object-cover" />
+                        ) : (
+                            <IoPersonSharp className='text-base' />
+                        )}
+                    </div>
+                    <div className='absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#23a55a] border-2 border-[#232428] rounded-full' />
                 </div>
 
                 {/* Name & Status */}
