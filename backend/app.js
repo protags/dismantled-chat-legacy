@@ -3,6 +3,9 @@ import cors from "cors";
 import "dotenv/config";
 import { Server } from "socket.io";
 import http from "http";
+import path from "path";
+
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -21,9 +24,13 @@ const io = new Server(server, {
     }
 });
 
-app.get("/", (req, res) => {
-    res.status(200).send("Server is ready!");
-});
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../frontend/dist")))
+
+    app.get("*", (_, res) => {
+        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    })
+}
 
 io.on("connection", (socket) => {
 

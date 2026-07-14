@@ -9,7 +9,7 @@ const useSocket = create((set, get) => ({
     connect: () => {
         if (get().socket) return;
 
-        const socket = io("http://localhost:3000");
+        const socket = io("https://chat.originory.com");
 
         socket.on("connect", () => {
             const currentUser = useAuth.getState().user;

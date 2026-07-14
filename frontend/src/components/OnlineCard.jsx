@@ -10,7 +10,7 @@ const OnlineCard = ({ user, onClose }) => {
             {/* Header for Mobile Drawer */}
             <div className='lg:hidden flex items-center justify-between pb-2 border-b border-white/5 shrink-0'>
                 <span className='text-[14px] font-semibold text-white'>Online Members</span>
-                <button 
+                <button
                     onClick={onClose}
                     className='text-[#b5bac1] hover:text-[#dbdee1] p-1 rounded hover:bg-white/5 transition-all cursor-pointer'
                 >
